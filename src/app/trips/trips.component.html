@@ -1,0 +1,62 @@
+<div class="trips-layout" style="">
+  <div style="display:inline-block; margin: 2rem; width: -webkit-fill-available;">
+    
+    <span>
+      <label class="trips-label-txt">
+        Trip
+      </label>
+    </span>
+    <div style="float: right;">
+        <div class="search">
+            <span><img  src="../../assets/round-search-24px.svg" class="fa fa-search"/></span>
+            <input type="text" id="" name="" [value]="searchKey" placeholder="Search" (change)="search($event.target.value)">
+
+          </div>
+    
+    </div>
+
+  </div>
+
+  <div style="display:block; margin: 2rem;"  id="listingTable">
+      <div *ngIf="isLoaderActive" class="loader"></div>
+    <table class="w3-table w3-striped w3-bordered">
+
+      <tr>
+        <th>Trip ID / Date</th>
+        <th>Customer / ID</th>
+        <th>Route</th>
+        <th>Price</th>
+        <th>Truck Assigned / Driver</th>
+        <th>Truck Type</th>
+        <th>Status</th>
+      </tr>
+      <tr *ngFor="let trip of tripsList">
+
+        <td>
+          <div>
+            {{ trip.tripId }}
+          </div>
+          {{trip.createdDate | date }}
+        </td>
+        <td>
+          <div>
+            {{trip.customerName}}
+          </div>
+          {{ trip.customerId }}
+        </td>
+        <td>{{ trip.source }} <label>to</label> {{ trip.destination }} </td>
+        <td>{{ trip.amount }}</td>
+        <td>{{ trip.driver.name }}</td>
+        <td>{{ trip.status }}</td>
+        <td>{{ trip.status }}</td>
+      </tr>
+
+    </table>
+  </div>
+  <div class="pagination">
+    <a  id="btn_prev" (click)="prevPage()">&laquo;</a>
+    <a class="active">{{current_page}}</a>
+    <a  id="btn_next" (click)="nextPage()">&raquo;</a>
+    
+  </div>
+</div>

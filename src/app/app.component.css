@@ -1,0 +1,32 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #232B88;
+}
+
+li {
+    padding: 1rem;
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: #E09B43;
+}
+
+.nigeria-dropdown{
+    background-color: #E09B43;
+    border-radius: 3px;
+}
+.active-link{
+    color: #E09B43;
+}
